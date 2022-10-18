@@ -23,19 +23,21 @@ public class Main {
                     // заповнюємо матрицю
                     OPMatrix.FillInTheMatrix(OPMatrix);
                     OPMatrix.display();
-                    // знаходимо всі різнотипні операції, які виконує ГВС
-                    System.out.println("Всі різнотипні операції:");
+                    // знаходимо всі різнотипні операції, які виконує ГВС (потом в один метод соберу)
+                    System.out.println("\nВсі різнотипні операції:");
                     UniqueOP = OPMatrix.UniqueOperations(OPMatrix);
                     System.out.println(UniqueOP.toString());
+                    System.out.println("Кількість різнотипних операцій: " + UniqueOP.size());
                     break;
                 case "2":
                     System.out.println("Завдання на РГР:");
                     Repository OurRepository = new Repository();
                     OurRepository.Get_repository().display();
                     // знаходимо всі різнотипні операції, які виконує ГВС
-                    System.out.println("Всі різнотипні операції:");
+                    System.out.println("\nВсі різнотипні операції:");
                     UniqueOP = OurRepository.Get_repository().UniqueOperations(OurRepository.Get_repository());
                     System.out.println(UniqueOP.toString());
+                    System.out.println("Кількість різнотипних операцій: " + UniqueOP.size());
                     break;
                 case "3":
                     System.out.print("Goodbye!");
