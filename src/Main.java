@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    
+
     // ввід int значень
     public static int InputCheck(Scanner entered_num) {
         int decimal_num;
@@ -11,7 +11,7 @@ public class Main {
                 entered_num.next();
             }
             decimal_num = entered_num.nextInt();
-        } while (decimal_num < 0);
+        } while (decimal_num < 2);
         return  decimal_num;
     }
 
@@ -33,11 +33,12 @@ public class Main {
                     // заповнюємо матрицю
                     OPMatrix.FillInTheMatrix(OPMatrix);
                     OPMatrix.display();
+                    // знаходимо всі різнотипні операції, які виконує ГВС
                     break;
                 case "2":
                     System.out.println("Завдання на РГР");
-                    Repository rep = new Repository();
-                    rep.Repository();
+                    Repository OurRepository = new Repository();
+                    OurRepository.Get_repository().display();
                     break;
                 case "3":
                     System.out.print("Goodbye!");
