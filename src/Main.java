@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
 public class Main {
+    
+    // ввід int значень
     public static int InputCheck(Scanner entered_num) {
         int decimal_num;
         do {
