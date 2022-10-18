@@ -40,4 +40,17 @@ public class OperationMatrix {
             System.out.println();
         }
     }
+    
+    //Заповнення матриці
+    public void FillInTheMatrix(OperationMatrix MyMatrix){
+        Scanner sc = new Scanner(System.in);
+        for(int i = 0; i < MyMatrix.rows; i++)
+        {
+            for(int j = 0; j < MyMatrix.cols; j++)
+            {
+                MyMatrix.data[i][j]=sc.next();
+            }
+        }
+
+    }
 }
