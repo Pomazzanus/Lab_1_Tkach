@@ -1,25 +1,15 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
-    // ввід int значень
-    public static int InputCheck(Scanner entered_num) {
-        int decimal_num;
-        do {
-            while (!entered_num.hasNextInt()) {
-                System.out.println("Помилка!");
-                entered_num.next();
-            }
-            decimal_num = entered_num.nextInt();
-        } while (decimal_num < 2);
-        return  decimal_num;
-    }
 
     public static void main(String[] args) {
         Scanner entered_num = new Scanner(System.in);
         String action;
         boolean is_stopped = false;
         int matrix_cols, matrix_raws;
+        List<String> UniqueOP = new ArrayList<>();
         while(!is_stopped){
             System.out.println("\n______________\n1)Створити матрицю\n2)Завдання на РГР\n3)Вихід\n");
             action = entered_num.next();
@@ -34,11 +24,18 @@ public class Main {
                     OPMatrix.FillInTheMatrix(OPMatrix);
                     OPMatrix.display();
                     // знаходимо всі різнотипні операції, які виконує ГВС
+                    System.out.println("Всі різнотипні операції:");
+                    UniqueOP = OPMatrix.UniqueOperations(OPMatrix);
+                    System.out.println(UniqueOP.toString());
                     break;
                 case "2":
-                    System.out.println("Завдання на РГР");
+                    System.out.println("Завдання на РГР:");
                     Repository OurRepository = new Repository();
                     OurRepository.Get_repository().display();
+                    // знаходимо всі різнотипні операції, які виконує ГВС
+                    System.out.println("Всі різнотипні операції:");
+                    UniqueOP = OurRepository.Get_repository().UniqueOperations(OurRepository.Get_repository());
+                    System.out.println(UniqueOP.toString());
                     break;
                 case "3":
                     System.out.print("Goodbye!");
@@ -49,6 +46,19 @@ public class Main {
 
             }
         }
+    }
+
+    // ввід int значень
+    public static int InputCheck(Scanner entered_num) {
+        int decimal_num;
+        do {
+            while (!entered_num.hasNextInt()) {
+                System.out.println("Помилка!");
+                entered_num.next();
+            }
+            decimal_num = entered_num.nextInt();
+        } while (decimal_num < 2);
+        return  decimal_num;
     }
 
 }
