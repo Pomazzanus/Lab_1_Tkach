@@ -44,6 +44,7 @@ public class OperationMatrix {
     //Заповнення матриці
     public void FillInTheMatrix(OperationMatrix MyMatrix){
         Scanner sc = new Scanner(System.in);
+        System.out.println("Заповнюємо матрицю операцій:");
         for(int i = 0; i < MyMatrix.rows; i++)
         {
             for(int j = 0; j < MyMatrix.cols; j++)
