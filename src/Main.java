@@ -28,7 +28,8 @@ public class Main {
                     System.out.println("Введіть кількість стовпців:");
                     matrix_cols = InputCheck(entered_num);
                     OperationMatrix OPMatrix = new OperationMatrix(matrix_raws, matrix_cols);
-                    //OPMatrix.display();
+                    OPMatrix.FillInTheMatrix(OPMatrix);
+                    OPMatrix.display();
                     break;
                 case "2":
                     System.out.println("Завдання на РГР");
