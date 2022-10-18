@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class OperationMatrix {
     public String[][] data;
     public int rows, cols;
@@ -40,7 +42,7 @@ public class OperationMatrix {
             System.out.println();
         }
     }
-    
+
     //Заповнення матриці
     public void FillInTheMatrix(OperationMatrix MyMatrix){
         Scanner sc = new Scanner(System.in);
