@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class OperationMatrix {
@@ -63,5 +65,18 @@ public class OperationMatrix {
             }
         }
 
+    }
+
+    public List<String>  UniqueOperations(OperationMatrix MyMatrix){
+        List<String> UnOperat = new ArrayList<>();
+        for(int i = 0; i < MyMatrix.rows; i++)
+        {
+            for(int j = 0; j < MyMatrix.cols; j++) {
+                if(!MyMatrix.data[i][j].equals(" ") && !UnOperat.contains(MyMatrix.data[i][j])){
+                    UnOperat.add(MyMatrix.data[i][j]);
+                }
+            }
+        }
+        return UnOperat;
     }
 }
