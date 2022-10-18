@@ -44,12 +44,20 @@ public class OperationMatrix {
     //Заповнення матриці
     public void FillInTheMatrix(OperationMatrix MyMatrix){
         Scanner sc = new Scanner(System.in);
+        String new_data;
         System.out.println("Заповнюємо матрицю операцій:");
         for(int i = 0; i < MyMatrix.rows; i++)
         {
             for(int j = 0; j < MyMatrix.cols; j++)
             {
-                MyMatrix.data[i][j]=sc.next();
+                new_data = sc.next();
+                // додаємо можливість ввести пустий рядок
+                if(new_data.equals("null")){
+                    MyMatrix.data[i][j] = " ";
+                }
+                else{
+                    MyMatrix.data[i][j] = new_data;
+                }
             }
         }
 
