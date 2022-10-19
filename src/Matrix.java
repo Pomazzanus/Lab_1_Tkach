@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Matrix {
-    private int[][] data = null;
+    public int[][] data = null;
     private int rows = 0, cols = 0;
 
     public Matrix(int rows, int cols) {
@@ -48,6 +48,39 @@ public class Matrix {
         }
     }
 
+    public Matrix NotMatchingAmountMatrix(Matrix unitMatrix)
+    {
+        var rows = unitMatrix.data.length;
+        var cols = unitMatrix.data[0].length;
+        var diffValueCount = 0;
+
+        Matrix amountMatrix = new Matrix(rows, rows);
+
+        for (int i = 0; i < rows - 1; i++)
+        {
+            for (int j = i + 1; j < rows; j++)
+            {
+                for (int k = 0; k < cols; k++)
+                {
+                    if (unitMatrix.data[i][k] != unitMatrix.data[j][k])
+                        diffValueCount++;
+                }
+
+                amountMatrix.data[j][i] = cols - diffValueCount;
+                diffValueCount = 0;
+            }
+        }
+        return amountMatrix;
+    }
+
+    public void DisplayMatrix() {
+        for (int row = 0; row < 14; ++row) {
+            for (int col = 0; col < 14; ++col) {
+                System.out.print(data[row][col] + "\t");
+            }
+            System.out.println();
+        }
+    }
     //Заповнення матриці
     public void FillInTheMatrix(Matrix MyMatrix, OperationMatrix OPmatrix, List<String> UniqueList){
         for(int i = 0; i < MyMatrix.rows; i++) {

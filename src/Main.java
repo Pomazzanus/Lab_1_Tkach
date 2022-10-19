@@ -31,6 +31,11 @@ public class Main {
                     System.out.println("\nМатриця суміжності:");
                     Matrix AdjacencyMatrix = new Matrix(OPMatrix.rows, UniqueOP.size());
                     AdjacencyMatrix.FillInTheMatrix(AdjacencyMatrix,OPMatrix,UniqueOP);
+                    System.out.println("\nМатриця не співпадаючих операцій:");
+                    Matrix nonMatchingOperationsMatrix = new Matrix(OPMatrix.rows,
+                            OPMatrix.rows);
+                    nonMatchingOperationsMatrix = nonMatchingOperationsMatrix.NotMatchingAmountMatrix(AdjacencyMatrix);
+                    nonMatchingOperationsMatrix.DisplayMatrix();
                     break;
                 case "2":
                     System.out.println("Завдання на РГР:");
@@ -44,6 +49,11 @@ public class Main {
                     System.out.println("\nМатриця суміжності:");
                     Matrix AdjacencyMatrix1 = new Matrix(OurRepository.Get_repository().rows, UniqueOP.size());
                     AdjacencyMatrix1.FillInTheMatrix(AdjacencyMatrix1,OurRepository.Get_repository(),UniqueOP);
+                    System.out.println("\nМатриця не співпадаючих операцій:");
+                    Matrix nonMatchingOperationsMatrix1 = new Matrix(OurRepository.Get_repository().rows,
+                            OurRepository.Get_repository().rows);
+                    nonMatchingOperationsMatrix1 = nonMatchingOperationsMatrix1.NotMatchingAmountMatrix(AdjacencyMatrix1);
+                    nonMatchingOperationsMatrix1.DisplayMatrix();
                     break;
                 case "3":
                     System.out.print("Goodbye!");
