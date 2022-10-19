@@ -28,6 +28,9 @@ public class Main {
                     UniqueOP = OPMatrix.UniqueOperations(OPMatrix);
                     System.out.println(UniqueOP.toString());
                     System.out.println("Кількість різнотипних операцій: " + UniqueOP.size());
+                    System.out.println("\nМатриця суміжності:");
+                    Matrix AdjacencyMatrix = new Matrix(OPMatrix.rows, UniqueOP.size());
+                    AdjacencyMatrix.FillInTheMatrix(AdjacencyMatrix,OPMatrix,UniqueOP);
                     break;
                 case "2":
                     System.out.println("Завдання на РГР:");
@@ -38,6 +41,9 @@ public class Main {
                     UniqueOP = OurRepository.Get_repository().UniqueOperations(OurRepository.Get_repository());
                     System.out.println(UniqueOP.toString());
                     System.out.println("Кількість різнотипних операцій: " + UniqueOP.size());
+                    System.out.println("\nМатриця суміжності:");
+                    Matrix AdjacencyMatrix1 = new Matrix(OurRepository.Get_repository().rows, UniqueOP.size());
+                    AdjacencyMatrix1.FillInTheMatrix(AdjacencyMatrix1,OurRepository.Get_repository(),UniqueOP);
                     break;
                 case "3":
                     System.out.print("Goodbye!");
